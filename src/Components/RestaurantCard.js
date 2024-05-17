@@ -1,23 +1,32 @@
 import React from "react";
 import star from "../Images/star.png";
+import { IMAGE_URL } from "../Utils/constants";
 
-const RestaurantCard = () => {
+const RestaurantCard = ({ data }) => {
+  const { cloudinaryImageId, name, cuisines, costForTwo } = data.info;
+  const { slaString } = data.info.sla;
+  const showEllipsis = cuisines.length > 3;
+  console.log(data.info);
   return (
-    <div className="w-3/12 rounded-lg my-2 hover:scale-105 cursor-pointer transform transition duration-300 ease-in-out">
+    <div className="w-3/12 my-2 hover:scale-105 cursor-pointer transform transition duration-100 ease-in-out font-ubuntu text-center">
       <img
-        src="https://www.eatthis.com/wp-content/uploads/sites/4/2024/03/dominos-menu.jpg?quality=82&strip=1"
+        src={IMAGE_URL + cloudinaryImageId}
         alt="Restaurant"
-        className=" rounded-3xl w-11/12 m-auto py-2"
+        className="rounded-3xl p-5 h-56 w-full object-cover"
       />
-      <div className="mx-6">
-        <h1 className="font-bold text-opacity-25 px-2">Dominos</h1>
-        <div className="flex items-center">
-          <img src={star} alt="star" className="pl-2 h-3" />
-          <p className="px-1">30 - 40 Mins</p>
-        </div>
-        <p className="px-2">PIZZAS</p>
-        <p className="px-2">Erode</p>
+      <h1 className="font-bold -mt-2 pb-1">{name}</h1>
+      <div className="flex items-center justify-center pb-1">
+        <img src={star} alt="star" className="h-3" />
+        <p className="ml-1">{slaString}</p>
       </div>
+      {cuisines.slice(0, 3).map((cuisine, index) => (
+        <span key={index} className="pb-1 text-gray-500">
+          {index > 0 && ", "}
+          {cuisine}
+        </span>
+      ))}
+      {showEllipsis && <span key="ellipsis">...</span>}
+      <p className="pb-1 text-gray-500">{costForTwo}</p>
     </div>
   );
 };

@@ -72,7 +72,7 @@ const CarouselComponent = () => {
     <div>
       <Carousel responsive={responsive}>
         {images.map((image, i) => (
-          <img key={i} src={image} className="w-40 mx-1" alt="dish" />
+          <img key={i} src={image} className="w-32 mx-1" alt="dish" />
         ))}
       </Carousel>
     </div>
