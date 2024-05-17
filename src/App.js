@@ -1,10 +1,13 @@
-import logo from "./Images/App Logo.png";
+import Body from "./Components/Body";
+// import Footer from "./Components/Footer";
+import Header from "./Components/Header";
 
 function App() {
   return (
-    <div className="px-5 pt-5">
-      <img src={logo} alt="Logo" className="w-1/12" />
-      <h1 className="text-orange-500 font-bold text-3xl">Hungry Hub</h1>
+    <div className="app">
+      <Header />
+      <Body />
+      {/* <Footer /> */}
     </div>
   );
 }
