@@ -3,10 +3,10 @@ import star from "../Images/star.png";
 import { IMAGE_URL } from "../Utils/constants";
 
 const RestaurantCard = ({ data }) => {
-  const { cloudinaryImageId, name, cuisines, costForTwo } = data.info;
+  const { cloudinaryImageId, name, cuisines, costForTwo, avgRating } =
+    data.info;
   const { slaString } = data.info.sla;
-  const showEllipsis = cuisines.length > 3;
-  console.log(data.info);
+  const showEllipsis = cuisines.length > 2;
   return (
     <div className="w-3/12 my-2 hover:scale-105 cursor-pointer transform transition duration-100 ease-in-out font-ubuntu text-center">
       <img
@@ -26,6 +26,7 @@ const RestaurantCard = ({ data }) => {
         </span>
       ))}
       {showEllipsis && <span key="ellipsis">...</span>}
+      <p className="pb-1 text-gray-500">{avgRating}</p>
       <p className="pb-1 text-gray-500">{costForTwo}</p>
     </div>
   );

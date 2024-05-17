@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
+import Shimmer from "./Shimmer";
 
 const RestaurantContainer = () => {
   const [restaurants, setRestaurants] = useState([]);
@@ -14,17 +15,39 @@ const RestaurantContainer = () => {
     );
     const json = await data.json();
     setRestaurants(
-      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
-  if (!restaurants.length) return;
+  if (!restaurants.length) return <Shimmer></Shimmer>;
+
+  const handleFilteredRestaurants = () => {
+    const filteredRes = restaurants.filter((res) => res.info.avgRating >= 4.5);
+    setRestaurants(filteredRes);
+  };
+
   return (
-    <div className="flex flex-wrap my-5">
-      {restaurants.map((res, i) => (
-        <RestaurantCard key={i} data={res} />
-      ))}
-    </div>
+    <>
+      <input
+        type="text"
+        className="border border-gray-200 w-4/12 p-2 mt-5 rounded-md placeholder:text-xs placeholder:text-center"
+        placeholder="Search here for restaurants ...!"
+      />
+      <button className="hover:bg-black text-white mx-2 p-2 rounded-md font-light bg-gray-500 w-28 font-ubuntu hover:text-orange-500">
+        Search
+      </button>
+      <button
+        className="hover:bg-black text-white mx-2 p-2 rounded-md font-light bg-gray-500 font-ubuntu hover:text-orange-500"
+        onClick={handleFilteredRestaurants}
+      >
+        Top Rated Restaurants
+      </button>
+      <div className="flex flex-wrap my-5">
+        {restaurants.map((res, i) => (
+          <RestaurantCard key={i} data={res} />
+        ))}
+      </div>
+    </>
   );
 };
 
