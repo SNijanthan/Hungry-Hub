@@ -27,11 +27,20 @@
 # Things Completed
 
 - Used create react app and config with Tailwind CSS
-- Added few google fonts for styling
+- Added few google fonts for styling (poppins and ubuntu)
 - Header completed ( Logo and Nav items )
 - Carousel added into App ( npm i react-multi-carousel )
-- CORS Plug-in added as chrome extension
-- Live API integrated and fetched details from Swiggy
+- CORS Plug-in added as chrome extension (CROSS-ORIGIN RESOURCE SHARING)
+- Swiggy API integrated and fetched details from Swiggy
 - Styled Restaurant card using Tailwind CSS
-- Added Top rated Restaurants filter to filter above 4.5 star restaurants
-- Shimmer effect added into app
+- Added Top rated Restaurants functionality to filter restaurants which have 4.0 star and above
+- Shimmer effect added - For better user experience
+- Added Search functionality
+- Bug Fix: Should make copy of restaurant list, So that even after the initial search the functionality should work as we expected
+- Bug Fix: or else it will make search only within the existing search results
+- Footer added
+- Installed react-router-dom ( npm i react-router-dom )
+- Added contact us and about us components
+- Routing (navigation) from home page to contact us / about us and cart done
+- Error component created to show if there is any error happens in App
+- Created children routes - Header intact with contact us , about us and cart page

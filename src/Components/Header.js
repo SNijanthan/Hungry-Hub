@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import logo from "../Images/App Logo.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [logIn, isLogIn] = useState(true);
@@ -15,9 +16,15 @@ const Header = () => {
       </div>
       <div className="mx-5">
         <ul className="flex items-center justify-center cursor-pointer font-medium">
-          <li className="mx-3 hover:text-orange-500">Home</li>
-          <li className="mx-3 hover:text-orange-500">Contact Us</li>
-          <li className="mx-3 hover:text-orange-500">About Us</li>
+          <li className="mx-3 hover:text-orange-500">
+            <Link to="/">Home</Link>
+          </li>
+          <li className="mx-3 hover:text-orange-500">
+            <Link to="/contact">Contact Us</Link>
+          </li>
+          <li className="mx-3 hover:text-orange-500">
+            <Link to="/about">About Us</Link>
+          </li>
           <li className="mx-3 hover:text-orange-500">Cart</li>
           <li
             className="mx-3 hover:text-orange-500 w-24 bg-gray-400 text-white hover:bg-black px-6 py-1 rounded-md text-center"

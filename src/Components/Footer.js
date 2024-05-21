@@ -5,12 +5,13 @@ import Logo from "../Images/App Logo.png";
 const Footer = () => {
   return (
     <>
-      <div className="w-full bg-gray-300 mt-10">
-        <div className=" flex items-center h-28 w-5/6 m-auto">
-          <p className="font-semibold text-2xl font-poppins mx-36 block">
+      <div className="bg-gray-300 mt-10">
+        <div className=" flex items-center justify-center h-32 w-5/6 m-auto">
+          <p className="font-semibold text-xl font-poppins mx-36 block">
             For better experience, download the
             <p>
-              <span className="text-orange-600">HUNGRY HUB</span> app now !
+              <span className="text-orange-600 text-2xl">HUNGRY HUB</span> app
+              now !
             </p>
           </p>
           <img
