@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 
 const RestaurantContainer = () => {
   const [restaurants, setRestaurants] = useState([]);
+  const ref = useRef(null);
 
   useEffect(() => {
     getData();
@@ -19,26 +20,37 @@ const RestaurantContainer = () => {
     );
   };
 
-  if (!restaurants.length) return <Shimmer></Shimmer>;
-
-  const handleFilteredRestaurants = () => {
-    const filteredRes = restaurants.filter((res) => res.info.avgRating >= 4.5);
-    setRestaurants(filteredRes);
+  const filteredRestaurants = () => {
+    const highRatedRes = restaurants.filter((res) => res.info.avgRating >= 4);
+    setRestaurants(highRatedRes);
   };
 
-  return (
+  const restaurantSearch = () => {
+    const search = restaurants.filter((res) =>
+      res.info.name.toLowerCase().includes(ref.current.value.toLowerCase())
+    );
+    setRestaurants(search);
+  };
+
+  return !restaurants.length ? (
+    <Shimmer />
+  ) : (
     <>
       <input
+        ref={ref}
         type="text"
         className="border border-gray-200 w-4/12 p-2 mt-5 rounded-md placeholder:text-xs placeholder:text-center"
         placeholder="Search here for restaurants ...!"
       />
-      <button className="hover:bg-black text-white mx-2 p-2 rounded-md font-light bg-gray-500 w-28 font-ubuntu hover:text-orange-500">
+      <button
+        className="hover:bg-black text-white mx-2 p-2 rounded-md font-light bg-gray-500 w-28 font-ubuntu hover:text-orange-500"
+        onClick={restaurantSearch}
+      >
         Search
       </button>
       <button
         className="hover:bg-black text-white mx-2 p-2 rounded-md font-light bg-gray-500 font-ubuntu hover:text-orange-500"
-        onClick={handleFilteredRestaurants}
+        onClick={filteredRestaurants}
       >
         Top Rated Restaurants
       </button>
