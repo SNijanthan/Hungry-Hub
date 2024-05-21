@@ -4,6 +4,7 @@ import Shimmer from "./Shimmer";
 
 const RestaurantContainer = () => {
   const [restaurants, setRestaurants] = useState([]);
+  const [newRestaurants, setNewRestaurants] = useState([]);
   const ref = useRef(null);
 
   useEffect(() => {
@@ -18,18 +19,22 @@ const RestaurantContainer = () => {
     setRestaurants(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
+    setNewRestaurants(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
 
   const filteredRestaurants = () => {
     const highRatedRes = restaurants.filter((res) => res.info.avgRating >= 4);
-    setRestaurants(highRatedRes);
+    setNewRestaurants(highRatedRes);
   };
 
   const restaurantSearch = () => {
     const search = restaurants.filter((res) =>
       res.info.name.toLowerCase().includes(ref.current.value.toLowerCase())
     );
-    setRestaurants(search);
+
+    setNewRestaurants(search);
   };
 
   return !restaurants.length ? (
@@ -55,7 +60,7 @@ const RestaurantContainer = () => {
         Top Rated Restaurants
       </button>
       <div className="flex flex-wrap my-5">
-        {restaurants.map((res, i) => (
+        {newRestaurants.map((res, i) => (
           <RestaurantCard key={i} data={res} />
         ))}
       </div>
