@@ -7,12 +7,10 @@ const Footer = () => {
     <>
       <div className="bg-gray-300 mt-10 -ml-24">
         <div className=" flex items-center justify-center h-32 w-5/6 m-auto">
-          <p className="font-semibold text-xl font-poppins mx-36 block">
+          <p className="font-semibold text-xl font-poppins mx-36 block w-96">
             For better experience, download the
-            <p>
-              <span className="text-orange-600 text-2xl">HUNGRY HUB</span> app
-              now !
-            </p>
+            <span className="text-orange-600 text-2xl mx-3">HUNGRY HUB</span>
+            app now !
           </p>
           <img
             src={PLAY_STORE}
@@ -44,7 +42,7 @@ const Footer = () => {
           </div>
           <div className="mt-10 m-auto">
             <p className="text-lg font-medium">Contact us</p>
-            <ul className="text-slate-400 leading-8 underline-offset-">
+            <ul className="text-slate-400 leading-8 underline-offset-8">
               <li className="hover:underline cursor-pointer">Help & Support</li>
               <li className="hover:underline cursor-pointer">
                 Partner with us

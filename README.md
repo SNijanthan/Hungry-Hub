@@ -44,3 +44,7 @@
 - Routing (navigation) from home page to contact us / about us and cart done
 - Error component created to show if there is any error happens in App
 - Created children routes - Header intact with contact us , about us and cart page
+- About us and Contact us pages styled properly
+- Utilized useLocator hook to render footer component based on some conditions ( Footer is not visible in RestaurantMenu components)
+- Properly styled RestaurantMenu component and retrieved restaurants infos from API
+-
