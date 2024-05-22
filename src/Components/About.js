@@ -13,8 +13,8 @@ const About = () => {
           <h1 className="font-medium text-5xl">
             <span className=" border-b-4 border-orange-600">Who</span> are we ?
           </h1>
-          <p className="mt-6 leading-8 text-gray-500">
-            Launched in 2010, Our technology platform connects customers,
+          <p className="mt-6 leading-8 text-gray-500 text-pretty">
+            Launched in 2024, Our technology platform connects customers,
             restaurant partners and delivery partners, serving their multiple
             needs. Customers use our platform to search and discover
             restaurants, read and write customer generated reviews and view and

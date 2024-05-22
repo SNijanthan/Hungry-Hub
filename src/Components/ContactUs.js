@@ -19,7 +19,7 @@ const ContactUs = () => {
           <label>Email Address</label>
           <input
             type="email"
-            placeholder="What's your full name?"
+            placeholder="you@example.com"
             className="h-10 border border-gray-400 rounded-lg p-2 placeholder:text-xs"
           />
           <label>Message</label>

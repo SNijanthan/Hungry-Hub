@@ -5,7 +5,7 @@ import Logo from "../Images/App Logo.png";
 const Footer = () => {
   return (
     <>
-      <div className="bg-gray-300 mt-10">
+      <div className="bg-gray-300 mt-10 -ml-24">
         <div className=" flex items-center justify-center h-32 w-5/6 m-auto">
           <p className="font-semibold text-xl font-poppins mx-36 block">
             For better experience, download the
@@ -36,7 +36,7 @@ const Footer = () => {
           </div>
           <div className="mt-10 m-auto">
             <p className="text-lg font-medium">Company</p>
-            <ul className="text-slate-400 leading-8">
+            <ul className="text-slate-400 leading-8 underline-offset-8">
               <li className="hover:underline cursor-pointer">About</li>
               <li className="hover:underline cursor-pointer">Careers</li>
               <li className="hover:underline cursor-pointer">Team</li>
@@ -44,7 +44,7 @@ const Footer = () => {
           </div>
           <div className="mt-10 m-auto">
             <p className="text-lg font-medium">Contact us</p>
-            <ul className="text-slate-400 leading-8">
+            <ul className="text-slate-400 leading-8 underline-offset-">
               <li className="hover:underline cursor-pointer">Help & Support</li>
               <li className="hover:underline cursor-pointer">
                 Partner with us

@@ -9,7 +9,7 @@ const Header = () => {
     isLogIn(!logIn);
   };
   return (
-    <div className="flex items-center justify-between py-2 pb-4 px-16 shadow-lg">
+    <div className="flex items-center justify-between py-2 pb-4 px-16 bg-black bg-opacity-95 text-white shadow-2xl">
       <div>
         <img src={logo} alt="Logo" className="w-10 mx-10" />
         <h1 className="text-orange-500 font-bold text-lg ml-3">Hungry Hub</h1>

@@ -48,13 +48,13 @@ const RestaurantContainer = () => {
         placeholder="Search here for restaurants ...!"
       />
       <button
-        className="hover:bg-black text-white mx-2 p-2 rounded-md font-light bg-gray-500 w-28 font-ubuntu hover:text-orange-500"
+        className="hover:bg-black text-white mx-8 p-2 rounded-md font-light bg-gray-500 w-28 font-ubuntu hover:text-orange-500"
         onClick={restaurantSearch}
       >
         Search
       </button>
       <button
-        className="hover:bg-black text-white mx-2 p-2 rounded-md font-light bg-gray-500 font-ubuntu hover:text-orange-500"
+        className="hover:bg-black text-white p-2 rounded-md font-light bg-gray-500 font-ubuntu hover:text-orange-500"
         onClick={filteredRestaurants}
       >
         Top Rated Restaurants
