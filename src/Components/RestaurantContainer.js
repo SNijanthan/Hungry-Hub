@@ -4,7 +4,9 @@ import Shimmer from "./Shimmer";
 
 const RestaurantContainer = () => {
   const [restaurants, setRestaurants] = useState([]);
+
   const [newRestaurants, setNewRestaurants] = useState([]);
+
   const ref = useRef(null);
 
   useEffect(() => {
@@ -16,12 +18,11 @@ const RestaurantContainer = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.34580&lng=77.73340&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    setRestaurants(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setNewRestaurants(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+    const fetchedRestaurants =
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants;
+    setRestaurants(fetchedRestaurants);
+    setNewRestaurants(fetchedRestaurants);
   };
 
   const filteredRestaurants = () => {
@@ -33,7 +34,6 @@ const RestaurantContainer = () => {
     const search = restaurants.filter((res) =>
       res.info.name.toLowerCase().includes(ref.current.value.toLowerCase())
     );
-
     setNewRestaurants(search);
   };
 
