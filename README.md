@@ -38,7 +38,7 @@
 - Added Search functionality
 - Bug Fix: Should make copy of restaurant list, So that even after the initial search the functionality should work as we expected
 - Bug Fix: or else it will make search only within the existing search results
-- Footer added
+- Footer added and styled properly
 - Installed react-router-dom ( npm i react-router-dom )
 - Added contact us and about us components
 - Routing (navigation) from home page to contact us / about us and cart done
@@ -47,4 +47,6 @@
 - About us and Contact us pages styled properly
 - Utilized useLocator hook to render footer component based on some conditions ( Footer is not visible in RestaurantMenu components)
 - Properly styled RestaurantMenu component and retrieved restaurants infos from API
--
+- Optimized our code by using custom hooks to achieve single responsibility principle
+- Added online & offline feature using custom hook
+- Implemented lazy loading for cart and groceries - It helps to build large scale app and very performant

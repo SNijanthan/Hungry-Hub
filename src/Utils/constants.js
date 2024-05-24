@@ -24,3 +24,9 @@ export const RESTAURANT_MENU_API_URL =
 
 export const RESTAURANTS_API_URL =
   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.34580&lng=77.73340&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+
+export const DELIVERY_IMAGE =
+  "https://cdn-icons-png.flaticon.com/128/11153/11153411.png";
+
+export const GROCERIES =
+  "https://imgs.search.brave.com/TVQfmEKjpWTIJigc6dNVAzCvliTjR0dtYt5Cvz3nAPg/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTI1/MTI0MTU2NS92ZWN0/b3IvY29taW5nLXNv/b24tYnJpZ2h0LWNv/bG9yZWQtYWR2ZXJ0/aXNpbmctc2lnbi13/aXRoLW1lZ2FwaG9u/ZS5qcGc_cz02MTJ4/NjEyJnc9MCZrPTIw/JmM9SVNSLUM4Wndp/RGRTRWxManNacjBn/TDZxOEhvNGptZUZs/RGJDbnJ3Z01zZz0";

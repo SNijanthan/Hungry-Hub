@@ -28,7 +28,12 @@ const Header = () => {
           <li className="mx-3 hover:text-orange-500">
             <Link to="/about">About Us</Link>
           </li>
-          <li className="mx-3 hover:text-orange-500">Cart</li>
+          <li className="mx-3 hover:text-orange-500">
+            <Link to="/grocery">Groceries</Link>
+          </li>
+          <li className="mx-3 hover:text-orange-500">
+            <Link to="/cart">Cart</Link>
+          </li>
           <li
             className="mx-3 hover:text-orange-500 w-24 bg-gray-400 text-white hover:bg-black px-6 py-1 rounded-md text-center"
             onClick={handleLogInBtn}

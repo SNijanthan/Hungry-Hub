@@ -8,7 +8,7 @@ function App() {
 
   const { resId } = useParams();
 
-  const pathWithoutFooter = ["/restaurant/" + resId];
+  const pathWithoutFooter = ["/restaurant/" + resId, "/grocery"];
 
   const hideFooter = pathWithoutFooter.includes(location.pathname);
 

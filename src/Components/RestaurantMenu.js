@@ -2,6 +2,7 @@ import Shimmer from "./Shimmer";
 import star from "../Images/star.png";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../CustomHooks/useRestaurantMenu";
+import { DELIVERY_IMAGE } from "../Utils/constants";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -51,7 +52,10 @@ const RestaurantMenu = () => {
           Outlet
           <span className="text-gray-500 font-medium ml-3">{locality}</span>
         </p>
-        <p>{slaString}</p>
+        <div className="flex items-center">
+          <img src={DELIVERY_IMAGE} alt="delivery" className="h-6" />
+          <p className=" ml-8">{slaString}</p>
+        </div>
       </div>
     </div>
   );
