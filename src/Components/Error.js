@@ -5,7 +5,7 @@ import { ERROR_IMAGE } from "../Utils/constants";
 const Error = () => {
   return (
     <div>
-      <button className="px-5 bg-indigo-600 text-white rounded-lg py-2 mb-2">
+      <button className="px-5 bg-indigo-600 text-white rounded-lg py-2 m-2">
         <Link to="/">Back To Home</Link>
       </button>
       <img

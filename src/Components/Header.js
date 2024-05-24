@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import logo from "../Images/App Logo.png";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../CustomHooks/useOnlineStatus";
 
 const Header = () => {
   const [logIn, isLogIn] = useState(true);
+
+  const onlineStatus = useOnlineStatus();
 
   const handleLogInBtn = () => {
     isLogIn(!logIn);
@@ -32,6 +35,7 @@ const Header = () => {
           >
             {logIn ? "Login" : "Logout"}
           </li>
+          <li className="cursor-none">{onlineStatus ? "🟢" : "🔴"}</li>
         </ul>
       </div>
     </div>

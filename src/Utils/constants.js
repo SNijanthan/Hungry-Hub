@@ -18,3 +18,9 @@ export const FOOD_IMAGE =
 
 export const ABOUT_PAGE =
   "https://b.zmtcdn.com/web/about/a7b0a36d5107f3590895981dab2eeac31563208212.jpeg?output-format=webp";
+
+export const RESTAURANT_MENU_API_URL =
+  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=11.34580&lng=77.73340&restaurantId=";
+
+export const RESTAURANTS_API_URL =
+  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.34580&lng=77.73340&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";

@@ -25,7 +25,7 @@ const ContactUs = () => {
           <label>Message</label>
           <textarea
             placeholder="Write your message for the team here"
-            className="h-28 border border-gray-400 rounded-lg p-2 placeholder:text-xs"
+            className="h-28 border border-gray-400 rounded-lg placeholder:text-xs placeholder:p-2"
           ></textarea>
           <button className="hover:text-orange-500 bg-gray-400 text-white hover:bg-black rounded-lg text-center mt-5">
             Submit

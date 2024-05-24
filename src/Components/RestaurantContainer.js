@@ -1,51 +1,29 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
+import useRestaurantContainer from "../CustomHooks/useRestaurantContainer";
 
 const RestaurantContainer = () => {
-  const [restaurants, setRestaurants] = useState([]);
-
-  const [newRestaurants, setNewRestaurants] = useState([]);
-
-  const ref = useRef(null);
-
-  useEffect(() => {
-    getData();
-  }, []);
-
-  const getData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.34580&lng=77.73340&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
-    const json = await data.json();
-    const fetchedRestaurants =
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants;
-    setRestaurants(fetchedRestaurants);
-    setNewRestaurants(fetchedRestaurants);
-  };
-
-  const filteredRestaurants = () => {
-    const highRatedRes = restaurants.filter((res) => res.info.avgRating >= 4);
-    setNewRestaurants(highRatedRes);
-  };
-
-  const restaurantSearch = () => {
-    const search = restaurants.filter((res) =>
-      res.info.name.toLowerCase().includes(ref.current.value.toLowerCase())
-    );
-    setNewRestaurants(search);
-  };
+  const {
+    restaurants,
+    newRestaurants,
+    filteredRestaurants,
+    restaurantSearch,
+    handleChange,
+    searchText,
+  } = useRestaurantContainer();
 
   return !restaurants.length ? (
     <Shimmer />
   ) : (
     <>
       <input
-        ref={ref}
+        value={searchText}
         type="text"
         className="border border-gray-200 w-4/12 p-2 mt-5 rounded-md placeholder:text-xs placeholder:text-center"
         placeholder="Search here for restaurants ...!"
+        onChange={handleChange}
       />
       <button
         className="hover:bg-black text-white mx-8 p-2 rounded-md font-light bg-gray-500 w-28 font-ubuntu hover:text-orange-500"
@@ -59,9 +37,11 @@ const RestaurantContainer = () => {
       >
         Top Rated Restaurants
       </button>
-      <div className="flex flex-wrap my-5">
-        {newRestaurants.map((res, i) => (
-          <RestaurantCard key={i} data={res} />
+      <div className="flex flex-wrap">
+        {newRestaurants.map((res) => (
+          <Link key={res.info.id} to={"/restaurant/" + res.info.id}>
+            <RestaurantCard data={res} />
+          </Link>
         ))}
       </div>
     </>

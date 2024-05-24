@@ -1,21 +1,12 @@
-import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import star from "../Images/star.png";
+import { useParams } from "react-router-dom";
+import useRestaurantMenu from "../CustomHooks/useRestaurantMenu";
 
 const RestaurantMenu = () => {
-  const [restaurantInfo, setRestaurantInfo] = useState(null);
+  const { resId } = useParams();
 
-  useEffect(() => {
-    fetchMenu();
-  }, []);
-
-  const fetchMenu = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=11.34580&lng=77.73340&restaurantId=408122&catalog_qa=undefined&submitAction=ENTER"
-    );
-    const json = await data.json();
-    setRestaurantInfo(json.data);
-  };
+  const restaurantInfo = useRestaurantMenu(resId);
 
   if (!restaurantInfo) {
     return <Shimmer />;
@@ -48,11 +39,14 @@ const RestaurantMenu = () => {
             <span className="mx-1">{costForTwoMessage}</span>
           </p>
         </div>
-        {cuisines.map((cuisine, i) => (
-          <p key={i} className="text-orange-600 underline underline-offset-2">
-            {cuisine}
-          </p>
-        ))}
+        <ul className="flex">
+          {cuisines.map((cuisine, i) => (
+            <li key={i} className="text-orange-600">
+              {i > 0 && ", "}
+              {cuisine}
+            </li>
+          ))}
+        </ul>
         <p>
           Outlet
           <span className="text-gray-500 font-medium ml-3">{locality}</span>
