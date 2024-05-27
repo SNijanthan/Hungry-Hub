@@ -30,3 +30,18 @@ export const DELIVERY_IMAGE =
 
 export const GROCERIES =
   "https://imgs.search.brave.com/TVQfmEKjpWTIJigc6dNVAzCvliTjR0dtYt5Cvz3nAPg/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTI1/MTI0MTU2NS92ZWN0/b3IvY29taW5nLXNv/b24tYnJpZ2h0LWNv/bG9yZWQtYWR2ZXJ0/aXNpbmctc2lnbi13/aXRoLW1lZ2FwaG9u/ZS5qcGc_cz02MTJ4/NjEyJnc9MCZrPTIw/JmM9SVNSLUM4Wndp/RGRTRWxManNacjBn/TDZxOEhvNGptZUZs/RGJDbnJ3Z01zZz0";
+
+export const VEG_ONLY_IMAGE =
+  "https://imgs.search.brave.com/F_-TQX3GXj2oUW82vWp8WSUPu1vDeETl7_4aj2sdzIg/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9i/L2IyL1ZlZ19zeW1i/b2wuc3Zn.svg";
+
+export const DEFAULT_DISH_IMAGE =
+  "https://imgs.search.brave.com/3_yqguQBPNpoK7U9C_iU41mvYScT3PwxOxdT4WZUUH0/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE1/MDQ2NzQ5MDAyNDct/MDg3N2RmOWNjODM2/P3E9ODAmdz0xMDAw/JmF1dG89Zm9ybWF0/JmZpdD1jcm9wJml4/bGliPXJiLTQuMC4z/Jml4aWQ9TTN3eE1q/QTNmREI4TUh4bGVI/QnNiM0psTFdabFpX/UjhNWHg4ZkdWdWZE/QjhmSHg4ZkE9PQ.jpeg";
+
+export const DROP_UP_IMAGE =
+  "https://cdn-icons-png.flaticon.com/128/992/992703.png";
+
+export const DROP_DOWN_IMAGE =
+  "https://cdn-icons-png.flaticon.com/128/1665/1665586.png";
+
+export const NON_VEG_ONLY_IMAGE =
+  "https://imgs.search.brave.com/3k40eK2pnsc3m5LQXHKtMUzAQt7qQZ8A4zj4iaGc9IU/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5na2V5LmNvbS9w/bmcvZGV0YWlsLzI0/NS0yNDU5MDcxX25v/bi12ZWctaWNvbi1u/b24tdmVnLXN5bWJv/bC1wbmcucG5n";

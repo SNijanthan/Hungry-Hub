@@ -1,6 +1,6 @@
 import React from "react";
 import star from "../Images/star.png";
-import { IMAGE_URL } from "../Utils/constants";
+import { IMAGE_URL, VEG_ONLY_IMAGE } from "../Utils/constants";
 
 const RestaurantCard = ({ data }) => {
   const { cloudinaryImageId, name, cuisines, costForTwo, avgRating } =
@@ -11,7 +11,7 @@ const RestaurantCard = ({ data }) => {
   const showEllipsis = cuisines.length > 2;
 
   return (
-    <div className="my-5 hover:scale-105 cursor-pointer transform transition duration-100 ease-in-out font-ubuntu text-center w-96">
+    <div className="my-5 hover:scale-105 cursor-pointer transform transition duration-100 ease-in-out font-ubuntu text-center w-96 text-sm">
       <div className="w-11/12 mx-auto ml-16">
         <img
           src={IMAGE_URL + cloudinaryImageId}
@@ -35,6 +35,23 @@ const RestaurantCard = ({ data }) => {
       </div>
     </div>
   );
+};
+
+// Higher order component
+
+export const vegOnlyLabel = (RestaurantCard) => {
+  return (data) => {
+    return (
+      <div>
+        <img
+          className="absolute ml-20 mt-[213px] w-5"
+          alt="only-veg"
+          src={VEG_ONLY_IMAGE}
+        />
+        <RestaurantCard {...data} />
+      </div>
+    );
+  };
 };
 
 export default RestaurantCard;

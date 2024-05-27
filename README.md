@@ -50,3 +50,6 @@
 - Optimized our code by using custom hooks to achieve single responsibility principle
 - Added online & offline feature using custom hook
 - Implemented lazy loading for cart and groceries - It helps to build large scale app and very performant
+- Added higher order component for restaurantCard to show veg restaurants
+- Created accordion to show completed list of restaurant dishes
+- Added toggle function to show and hide accordions

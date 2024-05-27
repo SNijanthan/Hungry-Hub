@@ -1,5 +1,5 @@
 import React from "react";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { vegOnlyLabel } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useRestaurantContainer from "../CustomHooks/useRestaurantContainer";
@@ -13,6 +13,8 @@ const RestaurantContainer = () => {
     handleChange,
     searchText,
   } = useRestaurantContainer();
+
+  const VegOnlyRestaurants = vegOnlyLabel(RestaurantCard);
 
   return !restaurants.length ? (
     <Shimmer />
@@ -40,7 +42,11 @@ const RestaurantContainer = () => {
       <div className="flex flex-wrap">
         {newRestaurants.map((res) => (
           <Link key={res.info.id} to={"/restaurant/" + res.info.id}>
-            <RestaurantCard data={res} />
+            {res.info.veg ? (
+              <VegOnlyRestaurants data={res} />
+            ) : (
+              <RestaurantCard data={res} />
+            )}
           </Link>
         ))}
       </div>

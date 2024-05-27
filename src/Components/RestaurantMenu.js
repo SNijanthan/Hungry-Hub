@@ -3,6 +3,7 @@ import star from "../Images/star.png";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../CustomHooks/useRestaurantMenu";
 import { DELIVERY_IMAGE } from "../Utils/constants";
+import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -13,9 +14,13 @@ const RestaurantMenu = () => {
     return <Shimmer />;
   }
 
-  console.log(
-    restaurantInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[2]
-      ?.card?.card?.itemCards
+  const RestMenus =
+    restaurantInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+
+  const categories = RestMenus.filter(
+    (res) =>
+      res.card?.card?.["@type"] ===
+      "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
   );
 
   const {
@@ -57,6 +62,9 @@ const RestaurantMenu = () => {
           <p className=" ml-8">{slaString}</p>
         </div>
       </div>
+      {categories.map((res) => (
+        <RestaurantCategory key={res?.card?.card?.title} data={res} />
+      ))}
     </div>
   );
 };
