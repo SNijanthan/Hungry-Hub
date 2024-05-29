@@ -45,7 +45,7 @@
 - Error component created to show if there is any error happens in App
 - Created children routes - Header intact with contact us , about us and cart page
 - About us and Contact us pages styled properly
-- Utilized useLocator hook to render footer component based on some conditions ( Footer is not visible in RestaurantMenu components)
+- Utilized useLocator hook to render footer component based on some conditions ( Footer will not visible in RestaurantMenu components)
 - Properly styled RestaurantMenu component and retrieved restaurants infos from API
 - Optimized our code by using custom hooks to achieve single responsibility principle
 - Added online & offline feature using custom hook
@@ -53,3 +53,7 @@
 - Added higher order component for restaurantCard to show veg restaurants
 - Created accordion to show completed list of restaurant dishes
 - Added toggle function to show and hide accordions
+- Context API added to avoid props drilling
+- Installed redux and redux toolkit (RTK) ( npm i redux ) ( npm i @reduxjs/toolkit )
+- Adding "Add to Cart" functionality to our app using redux store
+- Created Store => Configured with our App => Added slices into store

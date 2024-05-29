@@ -23,7 +23,9 @@ export const RESTAURANT_MENU_API_URL =
   "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=11.34580&lng=77.73340&restaurantId=";
 
 export const RESTAURANTS_API_URL =
-  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.34580&lng=77.73340&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9478212&lng=80.2321736&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+
+// lat=11.34580&lng=77.73340&
 
 export const DELIVERY_IMAGE =
   "https://cdn-icons-png.flaticon.com/128/11153/11153411.png";
@@ -45,3 +47,6 @@ export const DROP_DOWN_IMAGE =
 
 export const NON_VEG_ONLY_IMAGE =
   "https://imgs.search.brave.com/3k40eK2pnsc3m5LQXHKtMUzAQt7qQZ8A4zj4iaGc9IU/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5na2V5LmNvbS9w/bmcvZGV0YWlsLzI0/NS0yNDU5MDcxX25v/bi12ZWctaWNvbi1u/b24tdmVnLXN5bWJv/bC1wbmcucG5n";
+
+export const CART_ICON =
+  "https://cdn-icons-png.flaticon.com/128/726/726496.png";

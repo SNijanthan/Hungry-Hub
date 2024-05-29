@@ -1,11 +1,14 @@
-import Shimmer from "./Shimmer";
-import star from "../Images/star.png";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
+import star from "../Images/star.png";
 import useRestaurantMenu from "../CustomHooks/useRestaurantMenu";
 import { DELIVERY_IMAGE } from "../Utils/constants";
 import RestaurantCategory from "./RestaurantCategory";
+import Shimmer from "./Shimmer";
 
 const RestaurantMenu = () => {
+  const [showIndex, setShowIndex] = useState();
+
   const { resId } = useParams();
 
   const restaurantInfo = useRestaurantMenu(resId);
@@ -62,8 +65,13 @@ const RestaurantMenu = () => {
           <p className=" ml-8">{slaString}</p>
         </div>
       </div>
-      {categories.map((res) => (
-        <RestaurantCategory key={res?.card?.card?.title} data={res} />
+      {categories.map((res, i) => (
+        <RestaurantCategory
+          key={res?.card?.card?.title}
+          data={res}
+          showIndex={i === showIndex}
+          setShowIndex={() => setShowIndex(i === showIndex ? null : i)}
+        />
       ))}
     </div>
   );

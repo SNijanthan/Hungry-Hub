@@ -1,16 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import ItemList from "./ItemList";
 import { DROP_DOWN_IMAGE, DROP_UP_IMAGE } from "../Utils/constants";
 
-const RestaurantCategory = ({ data }) => {
-  const [showItems, setShowItems] = useState(false);
-
+const RestaurantCategory = ({ data, showIndex, setShowIndex }) => {
   const { title, itemCards } = data?.card?.card;
 
   const lengthOfCategory = data?.card?.card?.itemCards.length;
 
   const handleClick = () => {
-    setShowItems(!showItems);
+    setShowIndex();
   };
 
   return (
@@ -23,12 +21,12 @@ const RestaurantCategory = ({ data }) => {
           {title} <span>({lengthOfCategory})</span>
         </p>
         <img
-          src={showItems ? DROP_UP_IMAGE : DROP_DOWN_IMAGE}
+          src={showIndex ? DROP_UP_IMAGE : DROP_DOWN_IMAGE}
           alt="Dropdown"
           className="h-5"
         />
       </div>
-      {showItems &&
+      {showIndex &&
         itemCards.map((res) => (
           <ItemList key={res.card.info.id} data={res.card.info} />
         ))}
