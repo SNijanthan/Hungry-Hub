@@ -54,7 +54,7 @@ const Header = () => {
             className="mx-3 hover:text-orange-500 w-24 bg-gray-400 text-white hover:bg-black px-6 py-1 rounded-md text-center"
             onClick={handleLogInBtn}
           >
-            {logIn ? `Logout` : "Login"}
+            <button>{logIn ? `Logout` : "Login"}</button>
           </li>
           {/* <li className="w-24 mx-3">{logIn ? loggedInUser : defaultUser}</li> */}
           <li className="cursor-none">{onlineStatus ? "🟢" : "🔴"}</li>

@@ -14,6 +14,8 @@ const RestaurantContainer = () => {
     searchText,
   } = useRestaurantContainer();
 
+  console.log(newRestaurants);
+
   const VegOnlyRestaurants = vegOnlyLabel(RestaurantCard);
 
   return !restaurants.length ? (

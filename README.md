@@ -55,5 +55,7 @@
 - Added toggle function to show and hide accordions
 - Context API added to avoid props drilling
 - Installed redux and redux toolkit (RTK) ( npm i redux ) ( npm i @reduxjs/toolkit )
-- Adding "Add to Cart" functionality to our app using redux store
 - Created Store => Configured with our App => Added slices into store
+- Adding "Add to Cart" functionality to our app using redux store
+- Done unit testing for contact us and about us page
+-
